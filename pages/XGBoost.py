@@ -418,7 +418,7 @@ else:
     with col2:
         st.markdown(r"Where $\eta$ is the learning rate, default value is 0.3")
 
-    Original and predicted data
+    # Original and predicted data
     data = [[10, -10], [20, 5], [30, 7], [40, -5]]
     predict = [[10, -2.65], [20, 2.15], [30, 2.15], [40, -1.15]]
 
@@ -428,7 +428,6 @@ else:
 
     fig = go.Figure()
 
-    1. Actual data points
     fig.add_trace(go.Scatter(
         x=x,
         y=y,
@@ -437,7 +436,7 @@ else:
         name='Ground truth'
     ))
 
-    2. Predicted data points (green)
+
     fig.add_trace(go.Scatter(
         x=x,
         y=y_pred,
@@ -446,7 +445,6 @@ else:
         name='Predict'
     ))
 
-    3. Draw residuals and annotate their values
     for xi, yi, yhat in zip(x, y, y_pred):
         residual = round(yi - yhat, 2)
         mid_y = (yi + yhat) / 2
