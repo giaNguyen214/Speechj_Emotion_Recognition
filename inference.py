@@ -43,7 +43,7 @@ class ConformerXLFeatureExtractor(nn.Module):
     def __init__(self, num_classes, dropout_rate=0.3):
 
         super().__init__()
-        self.backbone = timm.create_model('caformer_b36.sail_in22k', pretrained=True, num_classes=0)
+        self.backbone = timm.create_model('caformer_b36.sail_in22k', pretrained=False, num_classes=0)
         self.dropout = nn.Dropout(p=dropout_rate)
         self.classifier = nn.Linear(self.backbone.num_features, num_classes)
 
